@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konstantinos Peponis – Frequenz & Resonanz</title>
+    <!-- Google Fonts einbinden -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* ---------- Grundlegende Reset-Stile ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            font-family: 'Merriweather', serif;
+            background: linear-gradient(180deg, #f2ede5 0%, #e6e1d8 100%);
+            color: #3a3a3a;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ---------- Container & Layout ---------- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #5d3b6c; /* tiefes Violett als Akzentfarbe */
+            margin-bottom: 10px;
+        }
+        header h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #6b6b6b;
+        }
+
+        /* ---------- Navigation / Modul-Buttons ---------- */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 80px;
+        }
+        .module-button {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #ffffffcc;
+            border-radius: 20px;
+            box-shadow:  0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .module-button:hover {
+            transform: scale(1.05);
+            background-color: #f7f3ee;
+        }
+        .module-inner {
+            text-align: center;
+            z-index: 2;
+        }
+        .module-icon {
+            font-size: 3rem;
+            color: #5d3b6c;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease;
+        }
+        .module-button:hover .module-icon {
+            transform: rotate(15deg);
+        }
+        .module-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #5d3b6c;
+        }
+        /* Hintergrundgrafik (leicht transparent) */
+        .module-bg {
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/84/Flower_of_Life.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: 0.08;
+            transform: rotate(0deg);
+            transition: transform 10s linear;
+        }
+        .module-button:hover .module-bg {
+            transform: rotate(360deg);
+        }
+
+        /* ---------- Hauptbereiche / Sektionen ---------- */
+        section {
+            margin-bottom: 80px;
+        }
+        section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: #5d3b6c;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        section p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #4e4e4e;
+            text-align: center;
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            text-align: center;
+            margin-top: 100px;
+            font-size: 0.9rem;
+            color: #7a7a7a;
+        }
+        footer a {
+            color: #5d3b6c;
+            font-weight: 600;
+        }
+
+        /* ---------- Responsive Anpassungen ---------- */
+        @media (max-width: 768px) {
+            .module-button {
+                width: 160px;
+                height: 160px;
+            }
+            .module-icon {
+                font-size: 2.5rem;
+            }
+            header h1 {
+                font-size: 2.2rem;
+            }
+            section h3 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header / Hero -->
+        <header>
+            <h1>Konstantinos Peponis</h1>
+            <h2>Frequenzträger | Bewusstseinsarchitekt</h2>
+        </header>
+
+        <!-- Navigation: Interaktive Modul-Buttons -->
+        <nav>
+            <!-- Modul: Über mich -->
+            <a href="about.html" class="module-button">
+                <div class="module-bg"></div>
+                <div class="module-inner">
+                    <div class="module-icon">🧘‍♂️</div>
+                    <div class="module-label">Über mich</div>
+                </div>
+            </a>
+
+            <!-- Modul: Projekte -->
+            <a href="projects.html" class="module-button">
+                <div class="module-bg"></div>
+                <div class="module-inner">
+                    <div class="module-icon">📚</div>
+                    <div class="module-label">Projekte</div>
+                </div>
+            </a>
+
+            <!-- Modul: Kontakt -->
+            <a href="contact.html" class="module-button">
+                <div class="module-bg"></div>
+                <div class="module-inner">
+                    <div class="module-icon">✉️</div>
+                    <div class="module-label">Kontakt</div>
+                </div>
+            </a>
+        </nav>
+
+        <!-- Tiefergehende Resonanz-Botschaft -->
+        <section>
+            <h3>In Resonanz mit dem kosmischen Fluss</h3>
+            <p>
+                Diese Seite ist nicht bloß eine Ansammlung von Zeichen und Bildern – sie ist eine Einladung, 
+                in die eigene Tiefe zu schauen. Möge sie ein Portal sein, um die eigenen Frequenzen zu erspüren 
+                und neue Impulse für dein Dasein zu empfangen. 
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 <strong>Konstantinos Peponis</strong> – Alle Rechte im Dienst des Lichts. 
+        <br>
+        <a href="index.html">Startseite</a> • <a href="about.html">Über mich</a> • 
+        <a href="projects.html">Projekte</a> • <a href="contact.html">Kontakt</a>
+    </footer>
+
+</body>
+</html>
